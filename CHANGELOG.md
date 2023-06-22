@@ -1,11 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/tree/HEAD)
+## [0.0.1a2](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/tree/0.0.1a2) (2023-06-22)
 
-[Full Changelog](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/compare/9bc24029e50de4f31d8f97dc08fc9cf6d341cf62...HEAD)
+[Full Changelog](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/compare/9bc24029e50de4f31d8f97dc08fc9cf6d341cf62...0.0.1a2)
 
 **Merged pull requests:**
 
+- Fix relative path automation errors with setup.py [\#5](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/pull/5) ([NeonDaniel](https://github.com/NeonDaniel))
 - Update GH Automations to shared actions [\#3](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/pull/3) ([NeonDaniel](https://github.com/NeonDaniel))
 - Initial implementation of Coqui Remote TTS plugin [\#1](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/pull/1) ([NeonDaniel](https://github.com/NeonDaniel))
 
