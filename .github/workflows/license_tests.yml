@@ -9,5 +9,3 @@ on:
 jobs:
   license_tests:
     uses: neongeckocom/.github/.github/workflows/license_tests.yml@master
-    with:
-      package-extras: audio,configuration,networking
