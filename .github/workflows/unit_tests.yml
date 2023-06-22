@@ -7,7 +7,7 @@ on:
 
 jobs:
   py_build_tests:
-    uses: neongeckocom/.github/.github/workflows/python_build_tests.yml@master
+    uses: neongeckocom/.github/.github/workflows/python_build_tests.yml@FEAT_TestRelativePathsSetupPy
   unit_tests:
     strategy:
       matrix:
