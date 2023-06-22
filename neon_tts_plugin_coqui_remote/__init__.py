@@ -30,7 +30,7 @@ import requests
 
 from urllib.parse import quote
 from typing import Optional
-from ovos_plugin_manager.templates.tts import RemoteTTS, TTSValidator
+from ovos_plugin_manager.templates.tts import RemoteTTS, TTSValidator, RemoteTTSException
 
 from .configs import languages
 
@@ -38,14 +38,17 @@ from .configs import languages
 class CoquiRemoteTTS(RemoteTTS):
     # TODO: Update to query remote API
     langs = languages
+    public_servers = ['https://coqui.2021.us']
 
-    def __init__(self, lang: str = "en", config: dict = None, api_path: str = '/synthesize'):
-        default_url = 'https://coqui.2021.us'
+    def __init__(self, lang: str = "en", config: dict = None,
+                 api_path: str = '/synthesize'):
         config = config or dict()
-        super(CoquiRemoteTTS, self).__init__(lang, config, default_url, api_path, CoquiRemoteTTSValidator(self))
+        RemoteTTS.__init__(self, lang, config, url="", api_path=api_path,
+                           validator=CoquiRemoteTTSValidator(self))
 
     def get_tts(self, sentence: str, output_file: str,
-                speaker: Optional[dict] = None, lang: Optional[str] = None) -> (str, Optional[str]):
+                speaker: Optional[dict] = None,
+                lang: Optional[str] = None) -> (str, Optional[str]):
         """
         Get Synthesized audio
         Args:
@@ -59,9 +62,13 @@ class CoquiRemoteTTS(RemoteTTS):
         speaker = speaker or dict()
         lang = lang or speaker.get('language') or self.lang
 
-        resp = requests.get(f'{self.url}{self.api_path}/{quote(sentence)}', params={'lang': lang})
-        if resp.status_code != 200:
-            return None
+        if not self.url:
+            resp = self._get_from_public_servers(lang, sentence)
+        else:
+            resp = requests.get(f'{self.url}{self.api_path}/{quote(sentence)}',
+                                params={'lang': lang})
+            if not resp.ok:
+                raise RemoteTTSException(resp.text)
         with open(output_file, 'wb') as f:
             f.write(resp.content)
         return output_file, None
@@ -69,6 +76,18 @@ class CoquiRemoteTTS(RemoteTTS):
     @property
     def available_languages(self):
         return set(self.langs.keys())
+
+    def _get_from_public_servers(self, lang, sentence):
+        for url in self.public_servers:
+            try:
+                r = requests.get(f'{url}{self.api_path}/{quote(sentence)}',
+                                 params={'lang': lang})
+                if r.ok:
+                    return r
+            except:
+                continue
+        raise RemoteTTSException(f"All Coqui public servers are down, "
+                                 f"please self host Coqui")
 
 
 class CoquiRemoteTTSValidator(TTSValidator):
