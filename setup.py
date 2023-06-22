@@ -27,34 +27,28 @@
 # SOFTWARE,  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 from setuptools import setup, find_packages
-from os import path, getenv
+from os import path, environ
+
+BASE_PATH = path.abspath(path.dirname(__file__))
 
 
 def get_requirements(requirements_filename: str):
-    requirements_file = path.join(path.abspath(path.dirname(__file__)), "requirements", requirements_filename)
+    requirements_file = path.join(BASE_PATH, "requirements", requirements_filename)
     with open(requirements_file, 'r', encoding='utf-8') as r:
         requirements = r.readlines()
-    requirements = [r.strip() for r in requirements if r.strip() and not r.strip().startswith("#")]
-
-    for i in range(0, len(requirements)):
-        r = requirements[i]
-        if "@" in r:
-            parts = [p.lower() if p.strip().startswith("git+http") else p for p in r.split('@')]
-            r = "@".join(parts)
-            if getenv("GITHUB_TOKEN"):
-                if "github.com" in r:
-                    r = r.replace("github.com", f"{getenv('GITHUB_TOKEN')}@github.com")
-            requirements[i] = r
+    requirements = [r.strip() for r in requirements
+                    if r.strip() and not r.strip().startswith("#")]
+    if 'MYCROFT_LOOSE_REQUIREMENTS' in environ:
+        print('USING LOOSE REQUIREMENTS!')
+        requirements = [r.replace('==', '>=').replace('~=', '>=')
+                        for r in requirements]
     return requirements
 
 
-PLUGIN_ENTRY_POINT = 'neon-tts-plugin-coqui-remote = neon_tts_plugin_coqui_remote:CoquiRemoteTTS'
-CONFIG_ENTRY_POINT = 'neon-tts-plugin-coqui-remote.config = neon_tts_plugin_coqui.configs:tts_config'
-
-with open("README.md", "r") as f:
+with open(path.join(BASE_PATH, "README.md"), "r") as f:
     long_description = f.read()
 
-with open("./version.py", "r", encoding="utf-8") as v:
+with open(path.join(BASE_PATH, "version.py"), "r", encoding="utf-8") as v:
     for line in v.readlines():
         if line.startswith("__version__"):
             if '"' in line:
@@ -62,6 +56,8 @@ with open("./version.py", "r", encoding="utf-8") as v:
             else:
                 version = line.split("'")[1]
 
+PLUGIN_ENTRY_POINT = 'neon-tts-plugin-coqui-remote = neon_tts_plugin_coqui_remote:CoquiRemoteTTS'
+CONFIG_ENTRY_POINT = 'neon-tts-plugin-coqui-remote.config = neon_tts_plugin_coqui.configs:tts_config'
 setup(
     name='neon-tts-plugin-coqui-remote',
     version=version,
