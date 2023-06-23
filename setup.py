@@ -57,14 +57,14 @@ with open(path.join(BASE_PATH, "version.py"), "r", encoding="utf-8") as v:
                 version = line.split("'")[1]
 
 PLUGIN_ENTRY_POINT = 'neon-tts-plugin-coqui-remote = neon_tts_plugin_coqui_remote:CoquiRemoteTTS'
-CONFIG_ENTRY_POINT = 'neon-tts-plugin-coqui-remote.config = neon_tts_plugin_coqui.configs:tts_config'
+CONFIG_ENTRY_POINT = 'neon-tts-plugin-coqui-remote.config = neon_tts_plugin_coqui_remote.configs:tts_config'
 setup(
     name='neon-tts-plugin-coqui-remote',
     version=version,
     description='A Coqui AI Remote TTS plugin for Neon',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/NeonGeckoCom/neon-tts-plugin-coqui',
+    url='https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote',
     author='Neongecko',
     author_email='developers@neon.ai',
     license='BSD-3.0',
