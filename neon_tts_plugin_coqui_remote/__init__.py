@@ -38,7 +38,9 @@ from .configs import languages
 class CoquiRemoteTTS(RemoteTTS):
     # TODO: Update to query remote API
     langs = languages
-    public_servers = ['https://coqui.2021.us']
+    public_servers = ['https://coqui.neonaiservices.com',
+                      'https://coqui.neonaibeta.com',
+                      ]
 
     def __init__(self, lang: str = "en", config: dict = None,
                  api_path: str = '/synthesize'):
