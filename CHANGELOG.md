@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.4a2](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/tree/0.0.4a2) (2024-09-19)
+
+[Full Changelog](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/compare/0.0.4a1...0.0.4a2)
+
+**Merged pull requests:**
+
+- Update OPM dependency to allow for 0.x version resolution [\#12](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/pull/12) ([NeonDaniel](https://github.com/NeonDaniel))
+
 ## [0.0.4a1](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/tree/0.0.4a1) (2023-11-18)
 
 [Full Changelog](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/compare/0.0.3...0.0.4a1)
