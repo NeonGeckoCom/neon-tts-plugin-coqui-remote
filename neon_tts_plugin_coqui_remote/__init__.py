@@ -30,12 +30,12 @@ import requests
 
 from urllib.parse import quote
 from typing import Optional
-from ovos_plugin_manager.templates.tts import RemoteTTS, TTSValidator, RemoteTTSException
+from ovos_plugin_manager.templates.tts import TTS, TTSValidator, RemoteTTSException
 
-from .configs import languages
+from neon_tts_plugin_coqui_remote.configs import languages
 
 
-class CoquiRemoteTTS(RemoteTTS):
+class CoquiRemoteTTS(TTS):
     # TODO: Update to query remote API
     langs = languages
     public_servers = ['https://coqui.neonaiservices.com',
@@ -45,8 +45,9 @@ class CoquiRemoteTTS(RemoteTTS):
     def __init__(self, lang: str = "en", config: dict = None,
                  api_path: str = '/synthesize'):
         config = config or dict()
-        RemoteTTS.__init__(self, lang, config, url="", api_path=api_path,
-                           validator=CoquiRemoteTTSValidator(self))
+        TTS.__init__(self, config=config, validator=CoquiRemoteTTSValidator(self))
+        self.api_path = api_path or "/"
+        self.url = config.get("url", "").rstrip("/")
 
     def get_tts(self, sentence: str, output_file: str,
                 speaker: Optional[dict] = None,
