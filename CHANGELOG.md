@@ -1,12 +1,36 @@
 # Changelog
 
-## [0.0.3a1](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/tree/0.0.3a1) (2023-06-23)
+## [0.0.4a4](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/tree/0.0.4a4) (2025-02-18)
 
-[Full Changelog](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/compare/0.0.2...0.0.3a1)
+[Full Changelog](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/compare/0.0.4a3...0.0.4a4)
 
 **Merged pull requests:**
 
-- Update dependencies for core compat. [\#9](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/pull/9) ([NeonDaniel](https://github.com/NeonDaniel))
+- Update unit test automation and license notices [\#14](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/pull/14) ([NeonDaniel](https://github.com/NeonDaniel))
+
+## [0.0.4a3](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/tree/0.0.4a3) (2024-09-20)
+
+[Full Changelog](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/compare/0.0.4a2...0.0.4a3)
+
+**Merged pull requests:**
+
+- Refactor to resolve deprecation warnings [\#13](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/pull/13) ([NeonDaniel](https://github.com/NeonDaniel))
+
+## [0.0.4a2](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/tree/0.0.4a2) (2024-09-19)
+
+[Full Changelog](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/compare/0.0.4a1...0.0.4a2)
+
+**Merged pull requests:**
+
+- Update OPM dependency to allow for 0.x version resolution [\#12](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/pull/12) ([NeonDaniel](https://github.com/NeonDaniel))
+
+## [0.0.4a1](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/tree/0.0.4a1) (2023-11-18)
+
+[Full Changelog](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/compare/0.0.3...0.0.4a1)
+
+**Merged pull requests:**
+
+- Update coqui public servers [\#11](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/pull/11) ([NeonDaniel](https://github.com/NeonDaniel))
 
 
 
