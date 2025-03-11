@@ -1,36 +1,12 @@
 # Changelog
 
-## [0.0.4a4](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/tree/0.0.4a4) (2025-02-18)
+## [0.1.1a1](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/tree/0.1.1a1) (2025-03-11)
 
-[Full Changelog](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/compare/0.0.4a3...0.0.4a4)
-
-**Merged pull requests:**
-
-- Update unit test automation and license notices [\#14](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/pull/14) ([NeonDaniel](https://github.com/NeonDaniel))
-
-## [0.0.4a3](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/tree/0.0.4a3) (2024-09-20)
-
-[Full Changelog](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/compare/0.0.4a2...0.0.4a3)
+[Full Changelog](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/compare/0.1.0...0.1.1a1)
 
 **Merged pull requests:**
 
-- Refactor to resolve deprecation warnings [\#13](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/pull/13) ([NeonDaniel](https://github.com/NeonDaniel))
-
-## [0.0.4a2](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/tree/0.0.4a2) (2024-09-19)
-
-[Full Changelog](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/compare/0.0.4a1...0.0.4a2)
-
-**Merged pull requests:**
-
-- Update OPM dependency to allow for 0.x version resolution [\#12](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/pull/12) ([NeonDaniel](https://github.com/NeonDaniel))
-
-## [0.0.4a1](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/tree/0.0.4a1) (2023-11-18)
-
-[Full Changelog](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/compare/0.0.3...0.0.4a1)
-
-**Merged pull requests:**
-
-- Update coqui public servers [\#11](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/pull/11) ([NeonDaniel](https://github.com/NeonDaniel))
+- Update gitignore to include test file outputs [\#16](https://github.com/NeonGeckoCom/neon-tts-plugin-coqui-remote/pull/16) ([NeonDaniel](https://github.com/NeonDaniel))
 
 
 
